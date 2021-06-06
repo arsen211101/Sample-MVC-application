@@ -1,0 +1,27 @@
+﻿@using Learning.Task.ViewModel
+@model Product
+
+<form asp-action="CreateProduct" method="post" asp-controller="Product">
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" name="Name"/>  
+    </div>
+    <div>
+        <label>Description</label>
+        <input asp-for="Description" name="Description" />
+    </div>
+    <div>
+        <label>Price:</label>
+        <input asp-for="Price" name="Price"/>
+    </div>
+    <div>
+        <label>Category:</label>
+        <select>
+            @foreach  (var item in Model.Category)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    
+</form>
